@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'listado-noticias',
     pathMatch: 'full'
   },
   {
@@ -14,7 +14,10 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+  },
+  { path: 'listado-noticias', loadChildren: './listado-noticias/listado-noticias.module#ListadoNoticiasPageModule' },
+  { path: 'noticia-detalle', loadChildren: './noticia-detalle/noticia-detalle.module#NoticiaDetallePageModule' },
+  { path: 'agregar', loadChildren: './agregar/agregar.module#AgregarPageModule' }
 ];
 
 @NgModule({
